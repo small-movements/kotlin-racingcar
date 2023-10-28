@@ -1,12 +1,13 @@
 package calculator
 
 import calculator.domain.Calculator
-import calculator.view.getSplitString
+import calculator.domain.Expression
+import calculator.view.input
 import calculator.view.printString
 
 fun main() {
     printString()
-    val symbols = getSplitString()
-    val result = Calculator.calculate(symbols)
+    val expression = Expression(input())
+    val result = Calculator.calculate(expression)
     println(result)
 }

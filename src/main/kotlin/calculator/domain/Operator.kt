@@ -14,7 +14,9 @@ enum class Operator(
     companion object {
         fun findBySymbol(symbol: String): Operator {
             return values().find { operator -> operator.symbol == symbol }
-                ?: throw IllegalArgumentException("존재하지 않는 연산자입니다.")
+                ?: throw IllegalArgumentException(NOT_EXIST_OPERATOR)
         }
+
+        private const val NOT_EXIST_OPERATOR = "존재하지 않는 연산자입니다."
     }
 }
